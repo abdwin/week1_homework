@@ -46,6 +46,22 @@ while x <= len(numbers)-1:
     x += 1
 print(sum)
 
+
+six_index = [index for (index, item) in enumerate(numbers) if item == 6]
+six_index_length = len(six_index)
+seven_index = [index for (index, item) in enumerate(numbers) if item == 7]
+seven_index_length = len(seven_index)
+templist = numbers[0:six_index[0]]
+sum = 0
+i=0
+while i < six_index_length-1:
+    templist = templist + numbers[seven_index[i]+1:six_index[i+1]]
+    i += 1
+for temp in templist:
+    sum += temp
+print(sum)
+
+
 # 5. HARD! Print the sum of the numbers. 
 #    Except the number 13 is very unlucky, so it does not count.
 #    And numbers that come immediately after a 13 also do not count.
